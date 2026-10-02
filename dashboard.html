@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASHBOARD</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet"
+        href="https://pyscript.net/releases/2025.2.2/core.css">
+
+    <script type="module"
+        src="https://pyscript.net/releases/2025.2.2/core.js">
+    </script>
+
+</head>
+<body id="dashboard_body">
+
+    <div id="store_info">
+        <p id="welcome_sign">Welcome,</p>
+        <p id="show_store_name">[STORE NAME]</p>
+        <p id="show_admin">[ADMIN]</p>
+        <button type="button" id="log_out" py-click="open_cashier"><i class='bx bx-box bx-sm' id="icon_inventory"></i>CASHIER</button>
+        <button type="button" id="back_inv" py-click="log_out"><i class='bx bx-exit bx-sm' id="icon_logout"></i>LOGOUT</button>
+    </div>
+
+    <div id="inv_sect">
+        <p id="inventory_header"><i class='bx bxs-shopping-bags bx-md' id="inventory_symbol"></i>Inventory</p>
+	    <div id="inv_table_cont">
+		    <table id="inv_table">
+                <thead>
+                    <tr>
+                        <th id="product_cell">Product</th>
+                        <th id="product_sku">SKU</th>
+                        <th id="product_category">Category</th>
+                        <th id="product_price">Price</th>
+                        <th id="product_stock">Stock</th>
+	                </tr>
+                </thead>
+                <tbody id="inv_list">
+                </tbody>
+            </table>
+		</div>
+    </div>
+
+
+    <div id="sales_profit_sum_row">
+
+        <div id="sales_sum">
+            <p id="sales_sum_text">Sales Summary<i class='bx bx-bar-chart-square bx-sm' id="chart_symbol"></i></p>
+            <p id="total_sl">₱[1,000]</p>
+            <p id="total_sl_label">Total Sales</p>
+        </div>
+
+        <div id="profit_sum">
+            <p id="profit_sum_text">Profit Summary<i class='bx bx-money bx-sm' id="money_symbol"></i></p>
+            <p id="total_prft">₱[1,000]</p>
+            <p id="total_prft_label">Total Profit</p>
+        </div>
+
+        <div id="prd_builder">
+
+        <p id="sku_builder_header"><i class='bx bx-package bx-md' id="sku_builder_symbol"></i>SKU Builder</p>
+
+        <div class="alignment_fixing_row">
+
+            <div class="alignment_fixing">
+                <label for="prd_name" class="labelsss">Product Name</label>
+                <input type="text" id="prd_name" class="textbox_input" placeholder="Enter Product Name" required>
+            </div>
+
+            <div class="alignment_fixing">
+                <label for="prd_category" class="labelsss">Product Category</label>
+                <select id="prd_category" class="textbox_input" placeholder="Enter Product Category" required></select>
+            </div>
+
+            <div class="alignment_fixing">
+                <label for="prd_brand" class="labelsss">Product Brand</label>
+                <input type="text" id="prd_brand" class="textbox_input" placeholder="Enter Product Brand" required>
+            </div>
+
+        </div>
+
+        <div class="alignment_fixing_row">
+            
+            <div class="alignment_fixing">
+                <label for="prd_variant" class="labelsss">Product Variant</label>
+                <select id="prd_variant" class="textbox_input" required></select>
+            </div>
+
+            <div class="alignment_fixing">
+                <label for="prd_model" class="labelsss">Product Model</label>
+                <select id="prd_model" class="textbox_input" required></select>
+            </div>
+
+            <div class="alignment_fixing">
+                <label for="prd_version" class="labelsss">Product Version</label>
+                <select id="prd_version" class="textbox_input" required></select>
+            </div>
+
+        </div>
+
+        <div class="alignment_fixing_row">
+
+            <div class="alignment_fixing">
+                <label for="prd_price" class="labelsss">Product Price (₱)</label>
+                <input type="number" min="0" id="prd_price" class="textbox_input" placeholder="Enter Product Price" required>
+            </div>
+
+            <div class="alignment_fixing">
+                <label for="prd_cost" class="labelsss">Product Cost (₱)</label>
+                <input type="number" min="0" id="prd_cost" class="textbox_input" placeholder="Enter Product Cost" required>
+            </div>
+
+            <div class="alignment_fixing">
+                <label for="prd_stock" class="labelsss">Product Stock</label>
+                <input type="number" min="0" id="prd_stock" class="textbox_input" placeholder="Enter Product Stock" required>
+            </div>
+
+        </div>
+
+                <p id="show_sku"></p>
+                <p id="prd_msg">Status: [UPDATED]</p>
+
+                <button type="button" id="add_prd" py-click="add_prd"><i class='bx bx-plus-circle bx-sm' id="icon_add_prd"></i>ADD PRODUCT</button>
+
+
+        </div>
+
+
+    </div>
+	
+    <py-script src="main.py"></py-script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" id="login_page_html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet"
+        href="https://pyscript.net/releases/2025.2.2/core.css">
+
+    <script type="module"
+        src="https://pyscript.net/releases/2025.2.2/core.js">
+    </script>
+
+</head>
+<body id="logisinpage">
+
+    <div id="login_cont"> 
+            <div id="login_box_small_box">
+            <img src="mizy.png" id="mizy_logo">
+                <label for="admin" id="admin_label">Admin Name</label>
+                <input type="text" id="admin" placeholder="Enter Admin Name" required>
+                <label for="store_nm" id="store_nm_label">Store Name</label>
+                <input type="text" id="store_nm" placeholder="Enter Store Name" required>
+            <label for="store_type" id="store_type_label">Store Type</label>
+            <select id="store_type" required>
+                <option value="">Select Store Type</option>
+                <option value="Clothing">Clothing</option>
+                <option value="F&B">Food & Beverage</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Cosmetics & Skincare">Cosmetics & Skincare</option>
+                <option value="Sports">Sports</option>
+                <option value="Home & Living">Home & Living</option>
+                <option value="School & Office">School & Office</option>
+                <option value="Toys and Games">Toys</option>
+                <option value="Grocery">Grocery</option>
+                <option value="Other">Other</option>
+            </select>
+            <button type="button" id="sign_in" py-click="sign_in">Sign In<i class='bx bx-right-arrow-alt bx-xs' id="right_arrow_sign_up"></i></button>
+        </div>
+        </div>
+
+    <py-script src="main.py"></py-script>
+</body>
+</html>

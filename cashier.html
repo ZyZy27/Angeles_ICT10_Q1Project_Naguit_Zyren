@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASHIER PAGE</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet"
+        href="https://pyscript.net/releases/2025.2.2/core.css">
+
+    <script type="module"
+        src="https://pyscript.net/releases/2025.2.2/core.js">
+    </script>
+    
+</head>
+<body id="cashier_body">
+
+    
+    <div id="store_info">
+        <p id="welcome_sign">Welcome,</p>
+        <p id="show_store_name">[STORE NAME]</p>
+        <p id="show_admin">[ADMIN]</p>
+        <button type="button" id="log_out" py-click="back_inv"><i class='bx bx-box bx-sm' id="icon_inventory"></i>INVENTORY</button>
+        <button type="button" id="back_inv" py-click="log_out"><i class='bx bx-exit bx-sm' id="icon_logout"></i>LOGOUT</button>
+    </div>
+
+<div id="cashier_main">
+
+    <div id="avail_prd_sect">
+        <div id="cashier_prd">
+        </div>
+    </div>
+
+    <div id="cashier_secondary">
+        <div id="sale_sect">
+            <p id="receipt_logo_sign"><i class='bx bx-receipt bx-md' id="receipt_logo"></i>Receipt</p>
+            <div id="receipt">
+            </div>
+            <button type="button" id="print_receipt_paper" py-click="print_receipt_paper"><i class='bx bx-printer bx-sm'></i></button>
+            <p id="sales_msg">Status: [Completed]</p>
+        </div>
+
+        <div id="cart_sect">
+            <p id="cart_list_header"><i class='bx bx-cart-alt bx-md' id="cart_list_logo"></i>Cart</p>
+            <div id="cart_table_cont">
+                <table id="cart_table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>SKU</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="cart_items">
+                    </tbody>
+                </table>
+
+                    <p id="cart_msg">Status: [Updated]</p>
+                    <p id="cart_total">Total: ₱[1,000]</p>
+                        <button type="button" id="complete_sale" py-click="complete_sale"><i class='bx bx-credit-card bx-sm' id="complete_sale_logo"></i>CHECK OUT</button>
+                        <button type="button" id="clear_cart" py-click="clear_cart"><i class='bx bx-trash bx-sm' id="clear_cart_logo"></i>CLEAR</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <py-script src="main.py"></py-script>
+
+</body>
+</html>
